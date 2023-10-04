@@ -14,16 +14,24 @@
 <body>
     <div>
         <h1>Login</h1>
-        <form action="templates/login_registrar.php" method="post">
-            <input type="text" name="txtusuario" placeholder="Ingresar Usuario" required>
+        <form action="login_registrar.php" method="post">
+            <input type="text" name="txtdocumento" placeholder="Documento de identidad" required>
             <input type="password" name="txtpassword" placeholder="Ingresar Contraseña" required>
             <input type="submit" value="Iniciar Sesión" name="btnlogin">
         </form>
 
         <h1>Registrar</h1>
-        <form action="templates/login_registrar.php" method="post">
-            <input type="text" name="txtusuario" placeholder="Ingresar Usuario" required>
-            <input type="password" name="txtpassword" placeholder="Contraseña a Registrar" required>
+        <form action="login_registrar.php" method="post">
+            <input type="text" name="txtdocumento" placeholder="Documento de identidad" required>
+            <input type="text" name="txtusuario" placeholder="Nombre completo" required>
+            <input type="text" name="txtapellido" placeholder="Apellido" required>
+            <input type="email" name="txtemail" placeholder="Correo electrónico" required> <br>
+
+            <input type="text" name="txtdireccion" placeholder="Direccion residencia" required>
+            <input type="text" name="txtdepartamento" placeholder="Departamento residencia" required>
+            <input type="text" name="txtciudad" placeholder="Ciudad residencia" required>
+            <input type="password" name="txtpassword" placeholder="Contraseña a Registrar" required><br><br>
+                       
             <input type="submit" value="Registrar" name="btnregistrar">
         </form>
     </div>
@@ -31,3 +39,4 @@
     
 </body>
 </html>
+
