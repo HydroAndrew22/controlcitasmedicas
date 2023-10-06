@@ -1,15 +1,16 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "","bdclinica");
+require 'conexion.php';
+ $conn = new mysqli("localhost", "root", "","bdclinica"); 
 
 if($conn->connect_errno)
 {
     echo "No hay conexión: (".$conn->connect_errno.")".$conn->connect_error; 
 }
 
+
 $documento = $_POST['txtdocumento'];
 $pass = $_POST['txtpassword'];
-
 
 
 if (isset($_POST['btnregistrar']))
@@ -40,7 +41,7 @@ if (isset($_POST['btnregistrar']))
      /* $queryregistrar = "INSERT INTO login(id_login, nombre) VALUES ('$nombre', '$pass_fuerte' )" ; */
         if(mysqli_query($conn, $queryregistrar))
         {
-            echo "<script>alert('Usuario registrado: $nombre ');window.location='index.html'</script>";
+            echo "<script>alert('Usuario registrado: $nombre ');window.location='index.php'</script>";
         }
         else
         {
@@ -53,31 +54,24 @@ if (isset($_POST['btnregistrar']))
 
 
 
-
 /* LOGIN OK*/
 
 
 if(isset($_POST['btnlogin']))
 {
-    $queryusuario   = mysqli_query($conn, "SELECT id_usuario, password FROM tab_usuarios WHERE id_usuario = '$documento'");
+    $queryusuario   = mysqli_query($conn, "SELECT id_usuario, password, nombre, apellido FROM tab_usuarios WHERE id_usuario = '$documento'");
     $nfil           = mysqli_num_rows($queryusuario);
     $buscarpass     = mysqli_fetch_array($queryusuario);
     
     if(($nfil == 1) && (password_verify($pass,$buscarpass['password'])))
     {
-        echo "Bienvenido: $documento";
+       echo "<script>alert('Bienvenido: $documento');window.location='index.php'</script>";
     }
     else
     {
         echo "<script>alert('Usuario o contraseña incorrecto');window.location='index.html'</script>";
     }
 }
-
-
-
-
-
-
 
 
 
