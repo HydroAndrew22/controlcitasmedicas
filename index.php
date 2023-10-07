@@ -1,38 +1,53 @@
 <?php
 require 'conexion.php';
 
+session_start();
+$documento = $_SESSION['documento_session'];
+
+
 
 if(isset($_GET['accion']) && $_GET['accion'] == 'eliminar') {
-    $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado='CANCELADA' WHERE id_usuario=:id_usuario");
-    $stmt->execute(['id_usuario' => $_GET['id_usuario']]);
+    $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado_cita='CANCELADA' WHERE id_usuario=:where_documento");
+    $stmt->execute(['where_documento' => $documento]);
 }
 
+
 if(isset($_POST['editar'])) {
-    /*$stmt = $pdo->prepare("UPDATE tab_agendar_cita SET fecha_cita=:fecha_cita, motivo=:motivo WHERE id=:id");
-    $stmt->execute(['fecha_cita' => $_POST['fecha_cita'], 'motivo' => $_POST['motivo'], 'id' => $_POST['id_cita']]); */
+    /* OK */
 
-    $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET id_usuario=$documento, id_tipo_cita=:tipo_cita, id_profesional=:tipo_cita WHERE id_usuario=:documento");
-    $stmt->execute(['fecha_cita' => $_POST['fecha_cita'], 'motivo' => $_POST['motivo'], 'id' => $_POST['id_cita']]);
+    $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET fecha_cita=:fecha_cita, id_tipo_cita=:tipo_cita, id_profesional=:profesional WHERE id_usuario=:where_documento");
+    $stmt->execute([
+        'where_documento' => $documento,
+        'fecha_cita' => $_POST['fecha_cita'], 
+        'profesional' => $_POST['tipo_cita'], 
+        'tipo_cita' => $_POST['tipo_cita']
 
-    
-
+    ]); /*header('Location: index.php'); */
 }
 
 if(isset($_GET['accion'])) {
     if ($_GET['accion'] == 'eliminar') {
-        $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado='CANCELADA' WHERE id_usuario=:iid_usuariod");
-        $stmt->execute(['id_usuario' => $_GET['id_usuario']]);
+        $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado_cita='CANCELADA' WHERE id_usuario=:where_documento");
+        $stmt->execute(['where_documento' => $documento]);header('Location: index.php');
     } elseif ($_GET['accion'] == 'confirmar') {
-        $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado='CONFIRMADA' WHERE id_usuario=:id_usuario");
-        $stmt->execute(['id_usuario' => $_GET['id_usuario']]);
+        $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado_cita='CONFIRMADA' WHERE id_usuario=:where_documento");
+        /* $stmt->execute(['where_documento' => $documento]);header('Location: index.php'); */
+        $stmt->execute(['where_documento' => $documento]);
+        echo "<script>alert('Cita Confirmada');window.location='index.php'</script>";
     }
 }
 
 
 
-$stmt = $pdo->prepare("SELECT * FROM vw_agendar_cita"); /* contiene WHERE estado_cita='PENDIENTE'*/
+
+$stmt = $pdo->prepare("SELECT * FROM vw_agendar_cita"); /* contiene WHERE estado_cita='PENDIENTE' y se usa para el cuadro de abajo */
 $stmt->execute();
 $citas = $stmt->fetchAll();
+
+$stmt2 = $pdo->prepare("SELECT * FROM vw_agendar_cita"); /* contiene WHERE estado_cita='CONFIRMADA Y MAXIMA' y se usa para el cuadro de abajo */
+$stmt2->execute();
+$confirs = $stmt2->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +101,7 @@ $citas = $stmt->fetchAll();
             <tr>
                 <td><?php echo $cita['fecha_cita']; ?></td>
                 <td><?php echo $cita['estado_cita']; ?></td>
-                <td><?php echo $cita['id_tipo_cita']; ?></td>
+                <td><?php echo $cita['tipo']; ?></td>
                 <td>
                     <a href="editar.php?id_usuario=<?php echo $cita['id_usuario']; ?>">Editar</a>
                     <a href="index.php?accion=eliminar&id_usuario=<?php echo $cita['id_usuario']; ?>">Cancelar</a>
@@ -94,7 +109,14 @@ $citas = $stmt->fetchAll();
                 </td>
             </tr>
         <?php endforeach; ?>
+
+
     </table>
 </body>
 </html>
+
+
+
+
+
 

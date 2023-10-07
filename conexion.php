@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "bdclinica"; /*"clinica";*/
+$dbname = "bdclinica"; 
 $user = "root";
 $pass = "";
 

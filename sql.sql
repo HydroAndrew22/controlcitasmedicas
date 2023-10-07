@@ -75,36 +75,27 @@ INSERT INTO tab_especialidades (tipo) VALUES ("Cardiólogo"), ("Dermatólogo"), 
 
 INSERT INTO tab_tipo_cita (tipo) VALUES  ("Cardiología"), ("Dermatología"), ("Ginecobstetricia"), ("Ginecología"), ("Internista"), ("Medicina General"), ("Nutricionista"), ("Oftalmología"), ("Ortopédia"), ("Otorrinolaringología"), ("Pediatría"), ("Urología");
 
-INSERT INTO tab_empleados (nombre, apellido, email, id_especialidad, sede) VALUES  ("Juan Camilo","Reyes","quam.curabitur@aol.net", 1,"Centro"),  ("Carlos","Santodomingo","non.justo.proin@hotmail.org", 2,"Manila"),  ("erick","Leon","auctor.vitae@aol.edu",10,"Argentina"),  ("Oscar","Betancourt","risus@hotmail.ca",5,"Poblado"),  ("Franco","Escamilla","dictum.cursus@icloud.couk",3,"Rio");
+INSERT INTO tab_empleados (nombre, apellido, email, id_especialidad, sede) VALUES  ("Juan Camilo","Reyes","quam.curabitur@aol.net", 1,"Centro"),  ("Carlos","Santodomingo","non.justo.proin@hotmail.org", 2,"Manila"),  ("erick","Leon","auctor.vitae@aol.edu",10,"Argentina"),  ("Oscar","Betancourt","risus@hotmail.ca",5,"Poblado"),  ("Franco","Escamilla","dictum.cursus@icloud.couk",3,"Rio"), ("Cameron","Díaz","amet@protonmail.com",9,"Bello"), ("Rosalia","Mejía","nec.tellus@icloud.org",8,"La Frontera"), ("Eliana","Barrios","ut.nisi.a@icloud.ca",7,"Manrique"), ("Lorena","Cano","egestas.fusce@icloud.net",6,"Itagui"), ("María","giraldo","lorem.vitae.odio@yahoo.org",4,"Caldas"), ("Juana","Umaña","cursus.nunc@google.edu",11,"Sabaneta"), ("Leidy","Muñoz","convallis.est@aol.edu",12,"Enciso");
+
+
 
 
 
 -- VISTAS
 
 create view vw_agendar_cita as SELECT ac.id_ac, ac.id_usuario, ac.id_tipo_cita, ac.fecha_cita, ac. estado_cita, em.id_profesional, 
-CONCAT(em.nombre,' ', em.apellido) as nombre_profesional, em.id_especialidad, em.sede
+CONCAT(em.nombre,' ', em.apellido) as nombre_profesional, em.id_especialidad, em.sede, tp.tipo 
 FROM tab_agendar_cita ac 
-LEFT join tab_empleados em 
-ON ac.estado_cita='PENDIENTE' and ac.id_profesional = em.id_profesional;
+LEFT join tab_empleados em on em.id_profesional = ac.id_profesional 
+LEFT join tab_tipo_cita tp on tp.id_tipo_cita = ac.id_tipo_cita
+WHERE ac.estado_cita='PENDIENTE' ;
 
 
-
-
-
-
-
-
-
-
--- borrar
-
-
-CREATE TABLE citas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fecha_cita DATETIME NOT NULL,
-    motivo VARCHAR(255),
-    estado ENUM('PENDIENTE', 'REALIZADA', 'CANCELADA', 'CONFIRMADA') DEFAULT 'PENDIENTE'
-);
-
+create view vw_consultar_cita_confirmada as SELECT max( ac.id_ac), ac.id_usuario, ac.id_tipo_cita, ac.fecha_cita, ac. estado_cita, em.id_profesional, 
+CONCAT(em.nombre,' ', em.apellido) as nombre_profesional, em.id_especialidad, em.sede, tp.tipo 
+FROM tab_agendar_cita ac 
+LEFT join tab_empleados em on em.id_profesional = ac.id_profesional 
+LEFT join tab_tipo_cita tp on tp.id_tipo_cita = ac.id_tipo_cita
+WHERE ac.estado_cita='CONFIRMADA' 
 
 

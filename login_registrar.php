@@ -9,8 +9,12 @@ if($conn->connect_errno)
 }
 
 
+
 $documento = $_POST['txtdocumento'];
 $pass = $_POST['txtpassword'];
+
+session_start();
+$_SESSION['documento_session'] = $documento ;
 
 
 if (isset($_POST['btnregistrar']))
@@ -54,7 +58,7 @@ if (isset($_POST['btnregistrar']))
 
 
 
-/* LOGIN OK*/
+/* LOGIN */
 
 
 if(isset($_POST['btnlogin']))
