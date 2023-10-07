@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css');
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+	font-family: Raleway, sans-serif;
+}
+
+
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+
+.login {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
+}
+
+.login__field {
+	padding: 20px 0px;	
+	position: relative;	
+}
+
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: #7875B5;
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: #6A679E;
+}
+
+.login__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+
+.button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #7875B5;
+}
+
+.social-login {	
+	position: absolute;
+	height: 140px;
+	width: 160px;
+	text-align: center;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-login__icon {
+	padding: 20px 10px;
+	color: #fff;
+	text-decoration: none;	
+	text-shadow: 0px 0px 8px #7875B5;
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);	
+}
+
+
+
+
+
+
+
+/* BOTON*/
+.bn13 {
+  
+	background: #fff;
+    box-sizing: border-box;
+	font-family: Raleway, sans-serif;
+    border-bottom-color: #6A679E;
+    border-color: #6A679E;
+	outline: none;
+	font-size: 24px;
+	margin-top: 30px;
+	padding: 16px 20px ;
+	border-radius: 26px;
+	border: 0px solid #D4D3E8;
+	text-transform: uppercase;
+    text-align: center;
+	font-weight: 700;
+	/* display: flex;
+	align-items: center; */
+	width: 100%;
+	color: #4C489D;
+	
+	cursor: pointer;
+	transition: all 0.2s;
+    animation: bn13bouncy 5s infinite linear;
+    margin: 0 0.3em 0.3em 0;
+    text-decoration: none;
+    position: relative;
+
+  }
+  
+  .bn13:hover {
+    background-color: white;
+    color: #000000;
+  }
+  
+  @keyframes bn13bouncy {
+    0% {
+      top: 0em;
+    }
+    40% {
+      top: 0em;
+    }
+    43% {
+      top: -0.9em;
+    }
+    46% {
+      top: 0em;
+    }
+    48% {
+      top: -0.4em;
+    }
+    50% {
+      top: 0em;
+    }
+    100% {
+      top: 0em;
+    }
+  }
+
+
+
+
+
+  /*ACORDEON*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.contenedor-acordeon{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;   
+}
+
+.contenedor-acordeon h2 {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.acordeon{
+    background: #fff; /* Separadores entre opciones */
+}
+
+.acordeon label{
+    display: block;             /* bloque */
+    padding: 20px;              /* Relleno */
+    font-size: 20px;             /* Tamaño letra */
+    /* background: #1c1c1c;       Fondo*/
+    color: #fff;             /* Color texto*/
+    cursor: pointer;             /* el mouse se cambie a una manito */
+    margin-bottom: 2px;             /* borde */
+    transition: all 300ms ease;     /* efecto */
+
+}
+
+.acordeon label:hover{     /* efecto pase el mouse por encima cambie de color */
+    background: #5C5696; /* D4D3E8 4C489D 2C3E50*/
+}
+
+.acordeon .contenido-acordeon{
+    padding: 0px;
+    margin:  0px 20px;     /* 0 arriba 20 abajo */
+    max-height:  0px;     /* alto */
+    overflow: hidden;     /* para que oculte el contenido */
+    transition: all 300ms ease;
+}
+
+.btn-acordeon:checked ~ .contenido-acordeon{
+    max-height:  600px;
+    padding:  15px 0px;     /* alto  - costado*/
+
+    border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+.btn-acordeon{     /* oculta el boton*/
+    display: none;
+}
+
+
+.acordeon-checkbox {
+    display: none; /* Oculta los checkboxes */
+}
+
+
+.caja{
+    border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 10px;
+	font-weight: 700;
+	width: 100%;
+	transition: .2s;
+}
+
+.caja:hover {
+	outline: none;
+	border-bottom-color: #6A679E;
+}
+
+.acordeon .contenido-acordeon .holi{
+
+	margin-left: auto;
+	color: #FFF; /* 7875B5*/
+    background: #5C5696;	
+	margin-bottom: auto;
+    font-size: 14px;
+
+    padding: 10px 20px ;
+    border-radius: 26px;
+    border: 1px solid #D4D3E8;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 2px 2px #5C5696;
+    cursor: pointer;
+
+    /*margin-top: 30px; */
+
+    
+}
+.acordeon .contenido-acordeon .holi:hover{
+    outline:auto;
+	border-bottom-color: #6A679E;
+    background-color: white;
+    color: #5C5696;
+}
+
+
+
+@media screen and (max-width:900px){      /* responsive en tablets a dispositivos*/
+    .contenedor-acordeon{
+        width: 90px;
+    }
+}
+
+
+
+
