@@ -14,7 +14,7 @@ $nfilval = mysqli_num_rows($queryvalidacion);
 
 if(($nfilval >= 1))
 {
-    echo "<script>alert('El documento: $documento cuenta con una solicitud en tramite, por favor confirmela para proceder a agendar una cita nueva');window.location='index.php#saltotabla'</script>";
+    echo "<script>alert('El documento: $documento cuenta con una solicitud en tramite, por favor confirmela para proceder a agendar una cita nueva');window.location='agendar_cita.php#saltotabla'</script>";
 }
 else
 {
@@ -28,7 +28,7 @@ if(isset($_POST['agendar'])) {
         'fecha_cita' => $_POST['fecha_cita']
 
         
-    ]);header('Location: index.php#saltotabla');
+    ]);header('Location: agendar_cita.php#saltotabla');
 }
 
 }

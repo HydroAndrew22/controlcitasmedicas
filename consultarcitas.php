@@ -31,7 +31,7 @@ $buscarusuario     = mysqli_fetch_array($stmt3);
     <title>..:: Agendamiento ::..</title>
       <!-- BOOTSTRAP 4  -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">        <!-- CSS PERSONALIZADO-->
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
        
     <!-- Estilos locales -->
     <link rel="stylesheet" type="text/css" href="static/css/main.css"> 
@@ -51,7 +51,7 @@ $buscarusuario     = mysqli_fetch_array($stmt3);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="index.php">Agendar Citas</a>
+                        <a class="nav-link" aria-current="page" href="agendar_cita.php">Agendar Citas</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/HydroAndrew22/controlcitasmedicas">Codigo Fuente</a>

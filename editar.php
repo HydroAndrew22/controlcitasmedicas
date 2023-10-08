@@ -20,7 +20,7 @@ $cita = $stmt->fetch();
     <title>..:: Editar Cita ::..</title>
       <!-- BOOTSTRAP 4  -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">        <!-- CSS PERSONALIZADO-->
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
        
     <!-- Estilos locales -->
     <link rel="stylesheet" type="text/css" href="static/css/main.css"> 
@@ -33,7 +33,7 @@ $cita = $stmt->fetch();
         <div class="screen">
             <div class="screen__content">
                 <h2>Editar Cita</h2>
-                <form class="login" action="index.php" method="POST">
+                <form class="login" action="agendar_cita.php" method="POST">
                     <input type="hidden" name="id_cita" value="<?php echo $cita['id_usuario']; ?>">
                     <label for="fecha_cita">Fecha y Hora:</label>
                     <input type="datetime-local" name="fecha_cita" value="<?php echo $cita['fecha_cita']; ?>" required>

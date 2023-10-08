@@ -22,7 +22,7 @@ if(isset($_POST['editar'])) {
         'profesional' => $_POST['tipo_cita'], 
         'tipo_cita' => $_POST['tipo_cita']
 
-    ]);header('Location: index.php#saltotabla');
+    ]);header('Location: agendar_cita.php#saltotabla');
 }
 
 
@@ -30,12 +30,12 @@ if(isset($_POST['editar'])) {
 if(isset($_GET['accion'])) {
     if ($_GET['accion'] == 'eliminar') {
         $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado_cita='CANCELADA' WHERE id_usuario=:where_documento");
-        $stmt->execute(['where_documento' => $documento]);header('Location: index.php');
+        $stmt->execute(['where_documento' => $documento]);header('Location: agendar_cita.php');
     } elseif ($_GET['accion'] == 'confirmar') {
         $stmt = $pdo->prepare("UPDATE tab_agendar_cita SET estado_cita='CONFIRMADA' WHERE id_usuario=:where_documento");
-        /* $stmt->execute(['where_documento' => $documento]);header('Location: index.php'); */
+        /* $stmt->execute(['where_documento' => $documento]);header('Location: agendar_cita.php'); */
         $stmt->execute(['where_documento' => $documento]);
-        echo "<script>alert('Cita Confirmada');window.location='index.php'</script>";
+        echo "<script>alert('Cita Confirmada');window.location='agendar_cita.php'</script>";
     }
 }
 
@@ -101,7 +101,7 @@ $buscarusuario     = mysqli_fetch_array($stmt3);
         <div class="screen">
             <div class="screen__content">
                 <h2>Agendar Cita</h2>
-                <form class="login" action="agendar.php" method="POST">
+                <form class="login" action="val_agenda.php" method="POST">
                 
                     <label for="fecha_cita">Fecha y Hora:</label>
                     <input type="datetime-local" name="fecha_cita" required><br><br>
@@ -156,8 +156,8 @@ $buscarusuario     = mysqli_fetch_array($stmt3);
                 <td><?php echo $cita['tipo']; ?></td>
                 <td>
                     <a href="editar.php?id_usuario=<?php echo $cita['id_usuario']; ?>">Editar</a>
-                    <a href="index.php?accion=eliminar&id_usuario=<?php echo $cita['id_usuario']; ?>">Cancelar</a>
-                    <a href="index.php?accion=confirmar&id_usuario=<?php echo $cita['id_usuario']; ?>">Confirmar</a>
+                    <a href="agendar_cita.php?accion=eliminar&id_usuario=<?php echo $cita['id_usuario']; ?>">Cancelar</a>
+                    <a href="agendar_cita.php?accion=confirmar&id_usuario=<?php echo $cita['id_usuario']; ?>">Confirmar</a>
                 </td>
             </tr>
         <?php endforeach; ?>

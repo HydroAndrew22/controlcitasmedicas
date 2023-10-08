@@ -43,7 +43,7 @@ if (isset($_POST['btnregistrar']))
         $queryregistrar = "INSERT INTO tab_usuarios(id_usuario, nombre, apellido, email, password, direccion, departamento, ciudad) VALUES ('$documento', '$nombre', '$apellido', '$email', '$pass_fuerte', '$direccion', '$departamento', '$ciudad' )" ;
         if(mysqli_query($conn, $queryregistrar))
         {
-            echo "<script>alert('Usuario registrado: $nombre ');window.location='index.php'</script>";
+            echo "<script>alert('Usuario registrado: $nombre ');window.location='agendar_cita.php'</script>";
         }
         else
         {
@@ -66,7 +66,7 @@ if(isset($_POST['btnlogin']))
     
     if(($nfil == 1) && (password_verify($pass,$buscarpass['password'])))
     {
-       echo "<script>alert('Bienvenido: $documento');window.location='index.php'</script>";
+       echo "<script>alert('Bienvenido: $documento');window.location='agendar_cita.php'</script>";
     }
     else
     {
