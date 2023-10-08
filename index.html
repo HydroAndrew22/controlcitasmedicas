@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>..:: Login ::..</title>
 
-
     <!-- BOOTSTRAP 4  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">        <!-- CSS PERSONALIZADO-->
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
        
     <!-- Estilos locales -->
     <link rel="stylesheet" type="text/css" href="static/css/main.css"> 
-
-
 
 </head>
 
 
 <body>
     <h1>Registro de Citas Médicas</h1>
-    &copy; No ingrese datos personales, el registro en esta aplicación es con fines educativos, no se proporcionará custodia de lo aquí registrado. <br>
+    &copy; El registro de datos en esta aplicación es con fines educativos, no se proporcionará custodia de lo aquí registrado. <br>
     Trabajo Final Semana 7, Gerencia de Proyectos, Grupo B02 - Subgrupo 22
 
     <div class="container">
@@ -40,22 +37,19 @@
                         <span class="button__text">Iniciar Sesión</span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>
-                   <!-- <input type="submit" class="button login__submit" value="Iniciar Sesión" name="btnlogin" >-->
                 </form>
 
-                    
+
                 <form action="login_registrar.php" method="post">
                     <div class="contenedor-acordeon">
 
                         <div class="acordeon">
-
-
                             <input type="checkbox" name="acordeon" id="btn-acordeon1" class="btn-acordeon">
                             <label for="btn-acordeon1"> 
                                 <h2 class="bn13" >Registrarse</h2>
                             </label>
                             <div class="contenido-acordeon">
-                                <input type="text" class="caja" name="txtdocumento" placeholder="Documento de identidad" required><br><br>
+                                <input type="number" class="caja" name="txtdocumento" placeholder="Documento de identidad" required><br><br>
                                 <input type="text" class="caja" name="txtusuario" placeholder="Nombres" required><br><br>
                                 <input type="text" class="caja" name="txtapellido" placeholder="Apellidos" required><br><br>
                                 <input type="email" class="caja" name="txtemail" placeholder="Correo electrónico" required> <br><br>
@@ -69,20 +63,11 @@
                                     <span class="button__text">Registrar</span>
                                 </button>
                                 <br><br>
-                                <!--<input type="submit" value="Registrar" name="btnregistrar">-->
                             </div>
-
                         </div>
-                        <!--<div class="contenido-acordeon">
-                            <div class="contenido-acordeon">
-                            </div>
-                        </div> -->
-
                     </div>
 
                 </form>
-                
-
             </div>
 
             <div class="screen__background">
@@ -91,29 +76,9 @@
                 <span class="screen__background__shape screen__background__shape2"></span>
                 <span class="screen__background__shape screen__background__shape1"></span>
             </div>	
-
-
-            <!--<button type="submit" class="bn13" name="btnregistrar">
-               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
-                    <style>svg{fill:#6a679e}</style><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
-                </svg> 
-                <span>Button</span>
-            </button>
-            -->
-
-
         </div>
     </div>
 
-
-
     
 </body>
-
-
-
-
-
-
 </html>
-

@@ -374,6 +374,114 @@ body {
 
 
 
+/* CALENDARIO*/
+input[type="datetime-local"] {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    border: 2px solid #6A679E;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para hover y focus */
+}
+
+/* Estilo al pasar el ratón por encima */
+input[type="datetime-local"]:hover {
+    border-color: #4C489D;
+}
+
+/* Estilo al enfocar el input */
+input[type="datetime-local"]:focus {
+    border-color: #4C489D;
+    box-shadow: 0 0 8px rgba(76, 72, 157, 0.5);
+}
+
+/* Estilo para el input cuando está desactivado */
+input[type="datetime-local"]:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+   
+
+/* Estilo base para la lista desplegable */
+select {
+    font-family: 'Arial', sans-serif;  /* Tipo de letra */
+    padding: 10px 15px;                /* Espacio interno */
+    border: 2px solid #6A679E;         /* Borde */
+    border-radius: 5px;                /* Bordes redondeados */
+    background-color: #f8f8f8;        /* Color de fondo */
+    color: #333;                       /* Color de texto */
+    font-size: 16px;                   /* Tamaño de letra */
+    cursor: pointer;                   /* Cursor de mano al pasar el ratón */
+
+    transition: border-color 0.3s;    /* Transición suave en el borde */
+}
+
+/* Estilo al pasar el ratón por encima */
+select:hover {
+    border-color: #4C489D;
+}
+
+/* Estilo al enfocar la lista desplegable */
+select:focus {
+    border-color: #4C489D;
+    outline: none;                      /* Para quitar el borde de foco por defecto en algunos navegadores */
+}
+
+/* Estilo para las opciones de la lista desplegable */
+select option {
+    padding: 5px 10px;                  /* Espacio interno para cada opción */
+}
+
+
+
+
+
+.contenedor-acordeon h3 {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 1px;
+    color: white;
+}
+    
+
+/* Estilos generales para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4C489D;
+    color: white;
+    
+}
+
+tr:hover {
+    background-color: #6A679E;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+/* Opcional: Cambio de color al pasar el mouse sobre el enlace */
+a:hover {
+    color: black;
+}
+
 @media screen and (max-width:900px){      /* responsive en tablets a dispositivos*/
     .contenedor-acordeon{
         width: 90px;

@@ -9,7 +9,6 @@ if($conn->connect_errno)
 }
 
 
-
 $documento = $_POST['txtdocumento'];
 $pass = $_POST['txtpassword'];
 
@@ -42,7 +41,6 @@ if (isset($_POST['btnregistrar']))
     {
 
         $queryregistrar = "INSERT INTO tab_usuarios(id_usuario, nombre, apellido, email, password, direccion, departamento, ciudad) VALUES ('$documento', '$nombre', '$apellido', '$email', '$pass_fuerte', '$direccion', '$departamento', '$ciudad' )" ;
-     /* $queryregistrar = "INSERT INTO login(id_login, nombre) VALUES ('$nombre', '$pass_fuerte' )" ; */
         if(mysqli_query($conn, $queryregistrar))
         {
             echo "<script>alert('Usuario registrado: $nombre ');window.location='index.php'</script>";
@@ -53,7 +51,6 @@ if (isset($_POST['btnregistrar']))
         }
     }
 }
-
 
 
 
@@ -76,26 +73,6 @@ if(isset($_POST['btnlogin']))
         echo "<script>alert('Usuario o contraseña incorrecto');window.location='index.html'</script>";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
