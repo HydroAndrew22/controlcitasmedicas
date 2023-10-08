@@ -53,7 +53,9 @@ $buscarusuario     = mysqli_fetch_array($stmt3);
                     <li class="nav-item active">
                         <a class="nav-link" aria-current="page" href="index.php">Agendar Citas</a>
                     </li>
-   
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/HydroAndrew22/controlcitasmedicas">Codigo Fuente</a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" aria-current="page" href="cerrarsesion.php"> Cerrar Sesión</a>
                     </li>
